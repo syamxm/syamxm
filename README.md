@@ -54,8 +54,8 @@ syamxm@cachyos ~> echo $STACK
 
 <br><br>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=syamxm&hide_border=true&bg_color=00000000&title_color=BD93F9&icon_color=BD93F9&text_color=C9C9D9&show_icons=true" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs?username=syamxm&hide_border=true&bg_color=00000000&title_color=BD93F9&text_color=C9C9D9&layout=compact&langs_count=6" />
+<img height="170" src="https://github-stats-extended.vercel.app/api?username=syamxm&hide_border=true&bg_color=00000000&title_color=BD93F9&icon_color=BD93F9&text_color=C9C9D9&show_icons=true" />
+<img height="170" src="https://github-stats-extended.vercel.app/api/top-langs?username=syamxm&hide_border=true&bg_color=00000000&title_color=BD93F9&text_color=C9C9D9&layout=compact&langs_count=6" />
 
 <br>
 
