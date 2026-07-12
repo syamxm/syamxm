@@ -70,7 +70,7 @@ syamxm@cachyos ~> cat contact.txt
 <div align="center">
 
 <a href="mailto:ahmadsyamim200@gmail.com"><img src="https://img.shields.io/badge/Email-1E1E2E?style=for-the-badge&logo=gmail&logoColor=BD93F9" /></a>
-<a href="https://taskflow.syamxm.com"><img src="https://img.shields.io/badge/Portfolio-1E1E2E?style=for-the-badge&logo=firefox&logoColor=BD93F9" /></a>
+<a href="https://cv.syamxm.com"><img src="https://img.shields.io/badge/Portfolio-1E1E2E?style=for-the-badge&logo=firefox&logoColor=BD93F9" /></a>
 <a href="https://www.linkedin.com/in/syamxm"><img src="https://img.shields.io/badge/LinkedIn-1E1E2E?style=for-the-badge&logo=linkedin&logoColor=BD93F9" /></a>
 
 <br><br>
