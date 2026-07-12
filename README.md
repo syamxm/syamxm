@@ -2,10 +2,12 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=28&pause=1200&color=BD93F9&center=true&vCenter=true&width=600&height=60&lines=%24+whoami;Ahmad+Syamim+%E2%80%94+syamxm;DevSecOps+%7C+Self-Hosting+%7C+Security" alt="typing header" />
 
-<img src="https://img.shields.io/badge/CachyOS-1E1E2E?style=flat-square&logo=archlinux&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Fish-1E1E2E?style=flat-square&logo=gnubash&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Neovim-1E1E2E?style=flat-square&logo=neovim&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Debian_homeserver-1E1E2E?style=flat-square&logo=debian&logoColor=BD93F9" />
+<p align="center">
+  <img src="https://img.shields.io/badge/CachyOS-1E1E2E?style=flat-square&logo=archlinux&logoColor=BD93F9" />
+  <img src="https://img.shields.io/badge/Fish-1E1E2E?style=flat-square&logoColor=BD93F9" />
+  <img src="https://img.shields.io/badge/Neovim-1E1E2E?style=flat-square&logo=neovim&logoColor=BD93F9" />
+  <img src="https://img.shields.io/badge/Debian_homeserver-1E1E2E?style=flat-square&logo=debian&logoColor=BD93F9" />
+</p>
 
 </div>
 
