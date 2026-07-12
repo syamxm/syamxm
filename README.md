@@ -2,10 +2,10 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=28&pause=1200&color=BD93F9&center=true&vCenter=true&width=600&height=60&lines=%24+whoami;Ahmad+Syamim+%E2%80%94+syamxm;DevSecOps+%7C+Self-Hosting+%7C+Security" alt="typing header" />
 
-<img src="https://img.shields.io/badge/OS-CachyOS-BD93F9?style=flat-square&logo=archlinux&logoColor=white&labelColor=1E1E2E" />
-<img src="https://img.shields.io/badge/Shell-Fish-BD93F9?style=flat-square&logo=gnubash&logoColor=white&labelColor=1E1E2E" />
-<img src="https://img.shields.io/badge/Editor-Neovim-BD93F9?style=flat-square&logo=neovim&logoColor=white&labelColor=1E1E2E" />
-<img src="https://img.shields.io/badge/Homeserver-Debian-BD93F9?style=flat-square&logo=debian&logoColor=white&labelColor=1E1E2E" />
+<img src="https://img.shields.io/badge/CachyOS-1E1E2E?style=flat-square&logo=archlinux&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Fish-1E1E2E?style=flat-square&logo=gnubash&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Neovim-1E1E2E?style=flat-square&logo=neovim&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Debian_homeserver-1E1E2E?style=flat-square&logo=debian&logoColor=BD93F9" />
 
 </div>
 
@@ -18,16 +18,14 @@ syamxm@cachyos ~> cat about.txt
 
 syamxm@cachyos ~> ls ~/projects
 
-  taskflow/                  MERN + security-gated CI/CD (gitleaks, semgrep,
-                             trivy, ZAP)                     → taskflow.syamxm.com
-  homeserver-dashboard/      Grafana · Prometheus · Loki · Umami
-                             behind Cloudflare Access        → dash.syamxm.com
-  student_reminder_system/   Flutter + Firebase + FastAPI — UiTM timetable
-                             import, bcrypt auth, Redis rate limiting
-  cipher-agent/              RSA/OTP spy game — pytest, hardened non-root
-                             container                       → cipher-agent.syamxm.com
-  cv-api/                    Node + Postgres, CI/CD over Tailscale → cv.syamxm.com
-  cipher-forge/              RSA teaching game, React + FastAPI    → cipher-forge.syamxm.com
+  taskflow/                  MERN, security-gated CI/CD — gitleaks, semgrep, trivy, ZAP
+  homeserver-dashboard/      Grafana · Prometheus · Loki behind Cloudflare Access
+  student_reminder_system/   Flutter + Firebase + FastAPI, bcrypt auth, Redis rate limits
+  cipher-agent/              RSA/OTP spy game — pytest, hardened non-root container
+  cv-api/                    Node + Postgres, CI/CD over Tailscale
+  cipher-forge/              RSA teaching game — React + FastAPI
+
+  live: taskflow · dash · cipher-agent · cipher-forge · cv  (.syamxm.com)
 
 syamxm@cachyos ~> cat learning.txt
 
@@ -54,12 +52,12 @@ syamxm@cachyos ~> echo $STACK
 
 <br><br>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=syamxm&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=BD93F9&icon_color=BD93F9&text_color=C9C9D9&count_private=true&show_icons=true" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs?username=syamxm&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=BD93F9&text_color=C9C9D9&layout=compact&langs_count=6" />
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=syamxm&hide_border=true&bg_color=00000000&title_color=BD93F9&icon_color=BD93F9&text_color=C9C9D9&show_icons=true" />
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs?username=syamxm&hide_border=true&bg_color=00000000&title_color=BD93F9&text_color=C9C9D9&layout=compact&langs_count=6" />
 
 <br>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=syamxm&theme=tokyonight&hide_border=true&background=00000000&ring=BD93F9&fire=BD93F9&currStreakLabel=BD93F9" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=syamxm&hide_border=true&background=00000000&ring=BD93F9&fire=BD93F9&currStreakLabel=BD93F9&currStreakNum=C9C9D9&sideNums=C9C9D9&sideLabels=BD93F9&dates=6C6C80" />
 
 </div>
 
@@ -70,7 +68,7 @@ syamxm@cachyos ~> cat contact.txt
 <div align="center">
 
 <a href="mailto:ahmadsyamim200@gmail.com"><img src="https://img.shields.io/badge/Email-1E1E2E?style=for-the-badge&logo=gmail&logoColor=BD93F9" /></a>
-<a href="https://cv.syamxm.com"><img src="https://img.shields.io/badge/Portfolio-1E1E2E?style=for-the-badge&logo=firefox&logoColor=BD93F9" /></a>
+<a href="https://taskflow.syamxm.com"><img src="https://img.shields.io/badge/Portfolio-1E1E2E?style=for-the-badge&logo=firefox&logoColor=BD93F9" /></a>
 <a href="https://www.linkedin.com/in/syamxm"><img src="https://img.shields.io/badge/LinkedIn-1E1E2E?style=for-the-badge&logo=linkedin&logoColor=BD93F9" /></a>
 
 <br><br>
