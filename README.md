@@ -18,12 +18,20 @@ syamxm@cachyos ~> cat about.txt
 
 syamxm@cachyos ~> ls ~/projects
 
-  c-aegis/        Kotlin/Android parental monitoring — FYP (Firebase, FCM, tamper detection)
-  taskflow/       MERN stack + hardened CI/CD pipeline        → taskflow.syamxm.com
-  cipher-forge/   FastAPI + React + MongoDB + Docker + Nginx  → cipher-forge.syamxm.com
-  check/          RKE2, GitLab CI, Harbor, ArgoCD, Traefik    → check.syamxm.com
-  homeserver/     Grafana · Prometheus · Loki · CrowdSec · Vaultwarden
-                  Cloudflare Tunnel, zero open inbound ports
+  taskflow/                  MERN + security-gated CI/CD (gitleaks, semgrep,
+                             trivy, ZAP)                     → taskflow.syamxm.com
+  homeserver-dashboard/      Grafana · Prometheus · Loki · Umami
+                             behind Cloudflare Access        → dash.syamxm.com
+  student_reminder_system/   Flutter + Firebase + FastAPI — UiTM timetable
+                             import, bcrypt auth, Redis rate limiting
+  cipher-agent/              RSA/OTP spy game — pytest, hardened non-root
+                             container                       → cipher-agent.syamxm.com
+  cv-api/                    Node + Postgres, CI/CD over Tailscale → cv.syamxm.com
+  cipher-forge/              RSA teaching game, React + FastAPI    → cipher-forge.syamxm.com
+
+syamxm@cachyos ~> cat learning.txt
+
+  Currently studying: Kubernetes, GitLab CI (not yet in shipped work)
 
 syamxm@cachyos ~> echo $STACK
 ```
@@ -31,17 +39,18 @@ syamxm@cachyos ~> echo $STACK
 <div align="center">
 
 <img src="https://img.shields.io/badge/Docker-1E1E2E?style=for-the-badge&logo=docker&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Kubernetes-1E1E2E?style=for-the-badge&logo=kubernetes&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/GitLab_CI-1E1E2E?style=for-the-badge&logo=gitlab&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/GitHub_Actions-1E1E2E?style=for-the-badge&logo=githubactions&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/Cloudflare-1E1E2E?style=for-the-badge&logo=cloudflare&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/Grafana-1E1E2E?style=for-the-badge&logo=grafana&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Prometheus-1E1E2E?style=for-the-badge&logo=prometheus&logoColor=BD93F9" />
 <br>
 <img src="https://img.shields.io/badge/Python-1E1E2E?style=for-the-badge&logo=python&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Kotlin-1E1E2E?style=for-the-badge&logo=kotlin&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/FastAPI-1E1E2E?style=for-the-badge&logo=fastapi&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/React-1E1E2E?style=for-the-badge&logo=react&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/MongoDB-1E1E2E?style=for-the-badge&logo=mongodb&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Flutter-1E1E2E?style=for-the-badge&logo=flutter&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/Firebase-1E1E2E?style=for-the-badge&logo=firebase&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/PostgreSQL-1E1E2E?style=for-the-badge&logo=postgresql&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Redis-1E1E2E?style=for-the-badge&logo=redis&logoColor=BD93F9" />
 
 <br><br>
 
@@ -55,7 +64,7 @@ syamxm@cachyos ~> echo $STACK
 </div>
 
 ```console
-syamxm@cachyos ~> curl -s syamxm.com/contact
+syamxm@cachyos ~> cat contact.txt
 ```
 
 <div align="center">
