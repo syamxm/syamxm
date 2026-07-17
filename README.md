@@ -15,7 +15,7 @@
 syamxm@cachyos ~> cat about.txt
 
   Final-year CS (Hons) student @ UiTM Shah Alam — DevSecOps specialisation
-  Incoming SecOps intern @ CMGI Sdn Bhd (Sep–Dec 2026)
+  Available for 14-week internship from 7th September to 11th December 2026.
   I build infrastructure that is defensible, not decorative.
 
 syamxm@cachyos ~> ls ~/projects
