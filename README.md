@@ -20,7 +20,7 @@ syamxm@cachyos ~> cat about.txt
 
 syamxm@cachyos ~> ls ~/projects
 
-  taskflow/                  MERN, security-gated CI/CD — gitleaks, semgrep, trivy, ZAP
+  taskflow/                  MERN, security-gated CI/CD — gitleaks, semgrep, trivy
   homeserver-dashboard/      Grafana · Prometheus · Loki behind Cloudflare Access
   student_reminder_system/   Flutter + Firebase + FastAPI, bcrypt auth, Redis rate limits
   cipher-agent/              RSA/OTP spy game — pytest, hardened non-root container
