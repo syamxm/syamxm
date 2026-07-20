@@ -15,7 +15,7 @@
 syamxm@cachyos ~> cat about.txt
 
   Final-year CS (Hons) student @ UiTM Shah Alam — DevOps specialisation with strong security foundation
-  Available for 14-week internship from 7th September to 11th December 2026.
+  Available for 14-week internship from 7th September to 11th December 2026, extendable up to 6 months if required.
   I build infrastructure that is defensible, not decorative.
 
 syamxm@cachyos ~> ls ~/projects
