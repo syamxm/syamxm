@@ -59,7 +59,7 @@ syamxm@cachyos ~> echo $STACK
 
 <br>
 
-<img src="https://streak-stats.demolab.com/?user=syamxm&hide_border=true&background=00000000&ring=BD93F9&fire=BD93F9&currStreakLabel=BD93F9&currStreakNum=C9C9D9&sideNums=C9C9D9&sideLabels=BD93F9&dates=6C6C80" />
+<img src="https://raw.githubusercontent.com/syamxm/syamxm/output/streak.svg" alt="GitHub streak stats" />
 
 </div>
 
