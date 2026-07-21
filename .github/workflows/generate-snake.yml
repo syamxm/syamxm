@@ -14,6 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Generate streak stats
+        uses: DenverCoder1/github-readme-streak-stats@main
+        with:
+          options: user=${{ github.repository_owner }}&hide_border=true&background=00000000&ring=BD93F9&fire=BD93F9&currStreakLabel=BD93F9&currStreakNum=C9C9D9&sideNums=C9C9D9&sideLabels=BD93F9&dates=6C6C80&disable_animations=true
+          path: dist/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate snake
         uses: Platane/snk@v3
         with:
@@ -24,18 +31,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate streak stats
-        uses: DenverCoder1/github-readme-streak-stats@main
-        with:
-          options: user=${{ github.repository_owner }}&hide_border=true&background=00000000&ring=BD93F9&fire=BD93F9&currStreakLabel=BD93F9&currStreakNum=C9C9D9&sideNums=C9C9D9&sideLabels=BD93F9&dates=6C6C80&disable_animations=true
-          path: dist/streak.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
-          commit_message: Update snake
+          commit_message: Update profile assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
