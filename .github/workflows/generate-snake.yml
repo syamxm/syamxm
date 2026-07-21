@@ -1,4 +1,4 @@
-name: Generate Snake
+name: Generate Profile Assets
 
 on:
   schedule:
@@ -23,6 +23,13 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#BD93F9&color_dots=#1E1E2E,#3B2A5E,#6247AA,#8B5FD9,#BD93F9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate streak stats
+        uses: DenverCoder1/github-readme-streak-stats@main
+        with:
+          options: user=${{ github.repository_owner }}&hide_border=true&background=00000000&ring=BD93F9&fire=BD93F9&currStreakLabel=BD93F9&currStreakNum=C9C9D9&sideNums=C9C9D9&sideLabels=BD93F9&dates=6C6C80&disable_animations=true
+          path: dist/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
