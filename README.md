@@ -20,14 +20,17 @@ syamxm@cachyos ~> cat about.txt
 
 syamxm@cachyos ~> ls ~/projects
 
+  beanthere/                 PHP + MariaDB coffee web app — 6-gate DevSecOps CI, local Ollama chatbot
   taskflow/                  MERN, security-gated CI/CD — gitleaks, semgrep, trivy
   homeserver-dashboard/      Grafana · Prometheus · Loki behind Cloudflare Access
   student_reminder_system/   Flutter + Firebase + FastAPI, bcrypt auth, Redis rate limits
   cipher-agent/              RSA/OTP spy game — pytest, hardened non-root container
   cv-api/                    Node + Postgres, CI/CD over Tailscale
   cipher-forge/              RSA teaching game — React + FastAPI
+  syamxm.com/                Portfolio site — vanilla HTML/CSS/JS, html5validator + gitleaks CI
 
-  live: taskflow · dash · cipher-agent · cipher-forge · cv  (.syamxm.com)
+  live: beanthere · taskflow · dash · cipher-agent · cipher-forge · cv  (.syamxm.com)
+        syamxm.com  (portfolio)
 
 syamxm@cachyos ~> cat learning.txt
 
@@ -44,6 +47,9 @@ syamxm@cachyos ~> echo $STACK
 <img src="https://img.shields.io/badge/Grafana-1E1E2E?style=for-the-badge&logo=grafana&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/Prometheus-1E1E2E?style=for-the-badge&logo=prometheus&logoColor=BD93F9" />
 <br>
+<img src="https://img.shields.io/badge/PHP-1E1E2E?style=for-the-badge&logo=php&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/MariaDB-1E1E2E?style=for-the-badge&logo=mariadb&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Ollama-1E1E2E?style=for-the-badge&logo=ollama&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/Python-1E1E2E?style=for-the-badge&logo=python&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/FastAPI-1E1E2E?style=for-the-badge&logo=fastapi&logoColor=BD93F9" />
 <img src="https://img.shields.io/badge/React-1E1E2E?style=for-the-badge&logo=react&logoColor=BD93F9" />
