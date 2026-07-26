@@ -21,7 +21,7 @@ syamxm@cachyos ~> cat about.txt
 syamxm@cachyos ~> ls ~/projects
 
   beanthere/                 PHP + MariaDB coffee web app — 6-gate DevSecOps CI, local Ollama chatbot
-  taskflow/                  MERN, security-gated CI/CD — gitleaks, semgrep, trivy
+  taskflow/                  MERN stack, security-gated CI/CD — gitleaks, semgrep, trivy
   homeserver-dashboard/      Grafana · Prometheus · Loki behind Cloudflare Access
   student_reminder_system/   Flutter + Firebase + FastAPI, bcrypt auth, Redis rate limits
   cipher-agent/              RSA/OTP spy game — pytest, hardened non-root container
