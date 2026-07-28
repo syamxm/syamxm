@@ -29,7 +29,7 @@ syamxm@cachyos ~> ls ~/projects
   cipher-forge/              RSA teaching game — React + FastAPI
   syamxm.com/                Portfolio site — vanilla HTML/CSS/JS, html5validator + gitleaks CI
 
-  live: beanthere · taskflow · dash · cipher-agent · cipher-forge · cv  (.syamxm.com)
+  live: beanthere · taskflow · cipher-agent · cipher-forge · cv  (.syamxm.com)
         syamxm.com  (portfolio)
 
 syamxm@cachyos ~> cat learning.txt
