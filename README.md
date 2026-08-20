@@ -14,7 +14,7 @@
 ```console
 syamxm@cachyos ~> cat about.txt
 
-  Final-year CS (Hons) student @ UiTM Shah Alam — DevOps specialisation with strong security foundation (TODO: Update Intern Info - Internship Secured)
+Final-year CS (Hons) student @ UiTM Shah Alam — DevOps specialisation with strong security foundation (TODO: Update Intern Info - Internship Secured)
 I build infrastructure that is defensible, not decorative. TODO: Big Update Coming, Stay Tuned, Hold Your Horses and Don't Change The Channel Just Yet.
 
 syamxm@cachyos ~> ls ~/projects
