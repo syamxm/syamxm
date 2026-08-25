@@ -1,36 +1,32 @@
-<table>
-<tr>
-<td valign="middle">
+```console
+syamxm@cachyos ~> whoami
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg">
-  <img alt="SYAMXM" src="assets/wordmark-light.svg" width="400">
-</picture>
+███████╗██╗   ██╗ █████╗ ███╗   ███╗██╗  ██╗███╗   ███╗
+██╔════╝╚██╗ ██╔╝██╔══██╗████╗ ████║╚██╗██╔╝████╗ ████║
+███████╗ ╚████╔╝ ███████║██╔████╔██║ ╚███╔╝ ██╔████╔██║
+╚════██║  ╚██╔╝  ██╔══██║██║╚██╔╝██║ ██╔██╗ ██║╚██╔╝██║
+███████║   ██║   ██║  ██║██║ ╚═╝ ██║██╔╝ ██╗██║ ╚═╝ ██║
+╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
 
-**Ahmad Syamim** — final-year Computer Science (Hons) student at UiTM Shah Alam,
-DevSecOps specialisation. DevOps intern from 7 September 2026.
+syamxm@cachyos ~> cat about.txt
 
-I self-host everything I ship: the code, the pipeline, and the box it runs on.
-Nine services in front of the public internet, no open inbound ports — everything
-goes through Cloudflare Tunnel or Tailscale.
+  Ahmad Syamim — final-year Computer Science (Hons) student at UiTM Shah
+  Alam, DevSecOps specialisation. DevOps intern from 7 September 2026.
 
-Infrastructure that is defensible, not decorative.
+  I self-host everything I ship: the code, the pipeline, and the box it
+  runs on. Nine services in front of the public internet, no open inbound
+  ports — everything goes through Cloudflare Tunnel or Tailscale.
 
-`role` student · devops intern &nbsp; `host` debian homeserver &nbsp; `shell` fish
+  Infrastructure that is defensible, not decorative.
 
-</td>
-<td valign="middle" width="300">
+syamxm@cachyos ~> env | grep -E 'ROLE|HOST|SHELL'
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <img alt="" src="assets/hero-light.svg" width="280">
-</picture>
+  ROLE    student · devops intern
+  HOST    debian homeserver
+  SHELL   fish
+```
 
-</td>
-</tr>
-</table>
-
-### `~> ls ~/projects`
+### `syamxm@cachyos ~> ls ~/projects`
 
 | Project | What it does | Stack |
 | --- | --- | --- |
@@ -49,13 +45,18 @@ Also: **[cipher-forge](https://github.com/syamxm/cipher-forge)** ([live](https:/
 Grafana, Prometheus and Loki run the observability stack behind Cloudflare Access.
 That repo is private — happy to walk through it.
 
-### `~> cat learning.txt`
+### `syamxm@cachyos ~> cat learning.txt`
 
-Currently studying Kubernetes and GitLab CI. Neither is in shipped work yet.
+```console
+  Currently studying Kubernetes and GitLab CI.
+  Neither is in shipped work yet.
+```
 
-### `~> cat contact.txt`
+### `syamxm@cachyos ~> cat contact.txt`
 
 [Portfolio](https://syamxm.com) · [CV](https://cv.syamxm.com) · [LinkedIn](https://www.linkedin.com/in/syamxm) · [Email](mailto:ahmadsyamim200@gmail.com)
+
+### `syamxm@cachyos ~> git log --stat`
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/syamxm/syamxm/output/streak.svg">
