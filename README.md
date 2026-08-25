@@ -1,88 +1,68 @@
-<div align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=28&pause=1200&color=BD93F9&center=true&vCenter=true&width=600&height=60&lines=%24+whoami;Ahmad+Syamim+%E2%80%94+syamxm;DevSecOps+%7C+Self-Hosting+%7C+Security" alt="typing header" />
-
-<p align="center">
-  <img src="https://img.shields.io/badge/CachyOS-1E1E2E?style=flat-square&logo=archlinux&logoColor=BD93F9" />
-  <img src="https://img.shields.io/badge/Fish-1E1E2E?style=flat-square&logoColor=BD93F9" />
-  <img src="https://img.shields.io/badge/Neovim-1E1E2E?style=flat-square&logo=neovim&logoColor=BD93F9" />
-  <img src="https://img.shields.io/badge/Debian_homeserver-1E1E2E?style=flat-square&logo=debian&logoColor=BD93F9" />
-</p>
-
-</div>
-
-```console
-syamxm@cachyos ~> cat about.txt
-
-Final-year CS (Hons) student @ UiTM Shah Alam — DevOps specialisation with strong security foundation (TODO: Update Intern Info - Internship Secured)
-I build infrastructure that is defensible, not decorative. TODO: Big Update Coming, Stay Tuned, Hold Your Horses and Don't Change The Channel Just Yet.
-
-syamxm@cachyos ~> ls ~/projects
-
-  beanthere/                 PHP + MariaDB coffee web app — 6-gate DevSecOps CI, local Ollama chatbot
-  taskflow/                  MERN stack, security-gated CI/CD — gitleaks, semgrep, trivy
-  homeserver-dashboard/      Grafana · Prometheus · Loki behind Cloudflare Access
-  student_reminder_system/   Flutter + Firebase + FastAPI, bcrypt auth, Redis rate limits
-  cipher-agent/              RSA/OTP spy game — pytest, hardened non-root container
-  cv-api/                    Node + Postgres, CI/CD over Tailscale
-  cipher-forge/              RSA teaching game — React + FastAPI
-  syamxm.com/                Portfolio site — vanilla HTML/CSS/JS, html5validator + gitleaks CI
-
-  live: beanthere · taskflow · cipher-agent · cipher-forge · cv  (.syamxm.com)
-        syamxm.com  (portfolio)
-
-syamxm@cachyos ~> cat learning.txt
-
-  Currently studying: Kubernetes, GitLab CI (not yet in shipped work)
-
-syamxm@cachyos ~> echo $STACK
-```
-
-<div align="center">
-
-<img src="https://img.shields.io/badge/Docker-1E1E2E?style=for-the-badge&logo=docker&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/GitHub_Actions-1E1E2E?style=for-the-badge&logo=githubactions&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Cloudflare-1E1E2E?style=for-the-badge&logo=cloudflare&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Grafana-1E1E2E?style=for-the-badge&logo=grafana&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Prometheus-1E1E2E?style=for-the-badge&logo=prometheus&logoColor=BD93F9" />
-<br>
-<img src="https://img.shields.io/badge/PHP-1E1E2E?style=for-the-badge&logo=php&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/MariaDB-1E1E2E?style=for-the-badge&logo=mariadb&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Ollama-1E1E2E?style=for-the-badge&logo=ollama&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Python-1E1E2E?style=for-the-badge&logo=python&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/FastAPI-1E1E2E?style=for-the-badge&logo=fastapi&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/React-1E1E2E?style=for-the-badge&logo=react&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Flutter-1E1E2E?style=for-the-badge&logo=flutter&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Firebase-1E1E2E?style=for-the-badge&logo=firebase&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/PostgreSQL-1E1E2E?style=for-the-badge&logo=postgresql&logoColor=BD93F9" />
-<img src="https://img.shields.io/badge/Redis-1E1E2E?style=for-the-badge&logo=redis&logoColor=BD93F9" />
-
-<br><br>
-
-<img height="170" src="https://github-stats-extended.vercel.app/api?username=syamxm&hide_border=true&bg_color=00000000&title_color=BD93F9&icon_color=BD93F9&text_color=C9C9D9&show_icons=true" />
-<img height="170" src="https://github-stats-extended.vercel.app/api/top-langs?username=syamxm&hide_border=true&bg_color=00000000&title_color=BD93F9&text_color=C9C9D9&layout=compact&langs_count=6" />
-
-<br>
-
-<img src="https://raw.githubusercontent.com/syamxm/syamxm/output/streak.svg" alt="GitHub streak stats" />
-
-</div>
-
-```console
-syamxm@cachyos ~> cat contact.txt
-```
-
-<div align="center">
-
-<a href="mailto:ahmadsyamim200@gmail.com"><img src="https://img.shields.io/badge/Email-1E1E2E?style=for-the-badge&logo=gmail&logoColor=BD93F9" /></a>
-<a href="https://cv.syamxm.com"><img src="https://img.shields.io/badge/Portfolio-1E1E2E?style=for-the-badge&logo=firefox&logoColor=BD93F9" /></a>
-<a href="https://www.linkedin.com/in/syamxm"><img src="https://img.shields.io/badge/LinkedIn-1E1E2E?style=for-the-badge&logo=linkedin&logoColor=BD93F9" /></a>
-
-<br><br>
+<table>
+<tr>
+<td valign="middle">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/syamxm/syamxm/output/github-contribution-grid-snake-dark.svg" />
-  <img alt="contribution snake" src="https://raw.githubusercontent.com/syamxm/syamxm/output/github-contribution-grid-snake.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg">
+  <img alt="SYAMXM" src="assets/wordmark-light.svg" width="400">
 </picture>
 
-</div>
+**Ahmad Syamim** — final-year Computer Science (Hons) student at UiTM Shah Alam,
+DevSecOps specialisation. DevOps intern from 7 September 2026.
+
+I self-host everything I ship: the code, the pipeline, and the box it runs on.
+Nine services in front of the public internet, no open inbound ports — everything
+goes through Cloudflare Tunnel or Tailscale.
+
+Infrastructure that is defensible, not decorative.
+
+`role` student · devops intern &nbsp; `host` debian homeserver &nbsp; `shell` fish
+
+</td>
+<td valign="middle" width="300">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <img alt="" src="assets/hero-light.svg" width="280">
+</picture>
+
+</td>
+</tr>
+</table>
+
+### `~> ls ~/projects`
+
+| Project | What it does | Stack |
+| --- | --- | --- |
+| **[beanthere](https://github.com/syamxm/beanthere)** · [live](https://beanthere.syamxm.com) | Coffee-shop platform — online ordering, loyalty tiers, drink recommender running on a local Ollama model on a 4 GB GPU. Every deploy gated by a six-stage pipeline that fails closed. | PHP 8.2 · MariaDB · Ollama · Trivy |
+| **[debian-watch](https://github.com/syamxm/debian-watch)** · [live](https://debian-watch.syamxm.com) | Homeserver monitoring — per-core CPU, memory, disks, network, temperatures, containers. Never mounts the Docker socket; reads through an nginx allowlist that forwards two endpoints and 403s the rest. Collectors degrade independently, so a dead sensor hides one panel instead of the app. | Go · HTMX · CodeQL · govulncheck |
+| **[taskflow](https://github.com/syamxm/taskflow)** · [live](https://taskflow.syamxm.com) | MERN task manager. Five scanners — Semgrep SAST, Gitleaks, and Trivy across SCA, image and IaC — block the deploy on HIGH or CRITICAL. | MERN · GitHub Actions · JWT |
+| **[cv-api-spring](https://github.com/syamxm/cv-api-spring)** · [live](https://cv-spring.syamxm.com) | My CV rebuilt on Spring Boot to learn the ecosystem properly. JSON is byte-for-byte identical to the Node API so the two can be diffed. One Thymeleaf template renders the page, the PDF and its A4 previews. 55 tests on Testcontainers. | Java 21 · Spring Boot 3.5 · Postgres · Flyway |
+| **[cipher-agent](https://github.com/syamxm/cipher-agent)** · [live](https://cipher-agent.syamxm.com) | RSA spy game in a fake browser terminal — solo cipher missions plus a two-player one-time-pad channel. Hardened non-root container. | Python · FastAPI · pytest |
+| **[cv-api](https://github.com/syamxm/cv-api)** · [live](https://cv.syamxm.com) | My CV as data — REST API serving resume JSON. Actions deploys over Tailscale SSH, published through a Cloudflare Tunnel. | Node · Express · Postgres |
+
+Also: **[cipher-forge](https://github.com/syamxm/cipher-forge)** ([live](https://cipher-forge.syamxm.com)) RSA teaching game, solved by hand stage by stage ·
+**[student_reminder_system](https://github.com/syamxm/student_reminder_system)** Flutter timetable and deadline reminders, FastAPI backend with bcrypt auth and Redis-rate-limited login ·
+**[c-aegis-landing](https://github.com/syamxm/c-aegis-landing)** ([live](https://c-aegis.syamxm.com)) landing page for my final-year Android project, no framework, no build step ·
+**[syamxm.com](https://github.com/syamxm/syamxm.com)** ([live](https://syamxm.com)) portfolio, vanilla HTML/CSS/JS
+
+Grafana, Prometheus and Loki run the observability stack behind Cloudflare Access.
+That repo is private — happy to walk through it.
+
+### `~> cat learning.txt`
+
+Currently studying Kubernetes and GitLab CI. Neither is in shipped work yet.
+
+### `~> cat contact.txt`
+
+[Portfolio](https://syamxm.com) · [CV](https://cv.syamxm.com) · [LinkedIn](https://www.linkedin.com/in/syamxm) · [Email](mailto:ahmadsyamim200@gmail.com)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/syamxm/syamxm/output/streak.svg">
+  <img alt="GitHub streak stats" src="https://raw.githubusercontent.com/syamxm/syamxm/output/streak-light.svg">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/syamxm/syamxm/output/github-contribution-grid-snake-dark.svg">
+  <img alt="contribution snake" src="https://raw.githubusercontent.com/syamxm/syamxm/output/github-contribution-grid-snake.svg">
+</picture>

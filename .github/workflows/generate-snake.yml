@@ -11,28 +11,37 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
-      - name: Generate streak stats
-        uses: DenverCoder1/github-readme-streak-stats@main
+      - name: Generate streak stats (dark)
+        uses: DenverCoder1/github-readme-streak-stats@f69662e10794e8757b12d3303a113a30b01c9bc9 # main
         with:
-          options: user=${{ github.repository_owner }}&hide_border=true&background=00000000&ring=BD93F9&fire=BD93F9&currStreakLabel=BD93F9&currStreakNum=C9C9D9&sideNums=C9C9D9&sideLabels=BD93F9&dates=6C6C80&disable_animations=true
+          options: user=${{ github.repository_owner }}&hide_border=true&background=00000000&ring=A78BFA&fire=A78BFA&currStreakLabel=A78BFA&currStreakNum=E4E1EE&sideNums=E4E1EE&sideLabels=A78BFA&dates=A5A1B2&disable_animations=true
           path: dist/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate streak stats (light)
+        uses: DenverCoder1/github-readme-streak-stats@f69662e10794e8757b12d3303a113a30b01c9bc9 # main
+        with:
+          options: user=${{ github.repository_owner }}&hide_border=true&background=00000000&ring=7C3AED&fire=7C3AED&currStreakLabel=7C3AED&currStreakNum=1F2328&sideNums=1F2328&sideLabels=7C3AED&dates=57606A&disable_animations=true
+          path: dist/streak-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate snake
-        uses: Platane/snk@v3
+        uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg?palette=github-dark&color_snake=#BD93F9
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#BD93F9&color_dots=#1E1E2E,#3B2A5E,#6247AA,#8B5FD9,#BD93F9
+            dist/github-contribution-grid-snake.svg?palette=github-light&color_snake=#7C3AED
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#A78BFA&color_dots=#1E1E2E,#3B2A5E,#6247AA,#8B5FD9,#A78BFA
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
         with:
           target_branch: output
           build_dir: dist
