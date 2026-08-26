@@ -202,9 +202,9 @@ def fetch_panel(terminal, stats, year):
     terminal.gen_text("", 3 + max(len(logo), len(details)), count=HOLD_SHORT)
 
     terminal.toggle_show_cursor(True)
-    terminal.gen_prompt(terminal.curr_row + 1)
+    terminal.gen_prompt(terminal.curr_row + 2)
     terminal.gen_typing_text(
-        "%s# infrastructure that is defensible, not decorative.%s" % (DIM, RESET),
+        "%s# Hello World! I hope you are enjoying my github profile :) %s" % (DIM, RESET),
         terminal.curr_row,
         contin=True,
     )
