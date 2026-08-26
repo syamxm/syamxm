@@ -10,6 +10,7 @@ query, ffmpeg for the encode.
 Writes terminal.gif to the working directory.
 """
 
+import math
 import os
 import re
 import sys
@@ -17,16 +18,17 @@ from datetime import datetime, timezone, timedelta
 
 import gifos
 
+import gen_hero
+
 USER = "syamxm"
 IGNORE_REPOS = ["syamxm"]
 TIMEZONE = timezone(timedelta(hours=8))
 
 WIDTH = 1000
-HEIGHT = 580
+HEIGHT = 640
 PADDING = 15
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-WORDMARK_SOURCE = os.path.join(REPO_ROOT, "assets", "syamxm.txt")
 CACHYOS_LOGO_SOURCE = os.path.join(REPO_ROOT, "assets", "cachyos.txt")
 
 ANSI_PATTERN = re.compile(r"\x1b\[[0-9;]*m")
@@ -48,24 +50,22 @@ MEMORY_TOTAL = 65536
 MEMORY_STEP = 7168
 HOLD_SHORT = 5
 HOLD_LONG = 150
+ROTATION_FRAMES = 60
 
 
-def ascii_wordmark(scale=1):
-    """The wordmark, flattened to ASCII.
+def crest_frames():
+    """One full rotation of the crest, rendered exactly as syamxm.com draws it.
 
-    gohufont-uni-14.pil is a latin-1 bitmap font, so the U+2550-U+2588 box and
-    block glyphs the art is drawn with raise UnicodeEncodeError. Only the solid
-    blocks become '#'; the box-drawing characters are the shadow bevel, and
-    filling those too turns the letterforms into an unreadable slab.
+    gen_hero.py is already a port of the site's js/ascii3d.js, so reusing its
+    model keeps the GIF and the site the same object at the same 60-column
+    scale. The ramp characters it emits are plain ASCII, which the latin-1
+    bitmap font renders without substitution.
     """
-    with open(WORDMARK_SOURCE, encoding="utf-8") as handle:
-        lines = handle.read().rstrip("\n").split("\n")
-
-    scaled = []
-    for line in lines:
-        row = "".join(("#" if char == "\u2588" else " ") * scale for char in line)
-        scaled.extend([row] * scale)
-    return scaled
+    model = gen_hero.build_model(gen_hero.read_art("ascii-art.txt"))
+    return [
+        gen_hero.render_frame(model, (index / ROTATION_FRAMES) * 2.0 * math.pi)
+        for index in range(ROTATION_FRAMES)
+    ]
 
 
 def cachyos_logo():
@@ -115,19 +115,23 @@ def post_screen(terminal, year):
 
 
 def boot_screen(terminal):
+    header = "Initiating Boot Sequence ....."
     terminal.clear_frame()
     terminal.gen_text("Initiating Boot Sequence ", 1, contin=True)
     terminal.gen_typing_text(".....", 1, contin=True)
 
-    logo = ascii_wordmark(2)
-    top_row = (terminal.num_rows - len(logo)) // 2
-    left_col = (terminal.num_cols - len(logo[0])) // 2 + 1
-    for offset, line in enumerate(logo):
-        terminal.gen_text("%s%s%s" % (PURPLE, line, RESET), top_row + offset, left_col)
+    indent = " " * ((terminal.num_cols - gen_hero.COLUMNS) // 2)
+    terminal.toggle_show_cursor(False)
+    for frame in crest_frames():
+        terminal.clear_frame()
+        terminal.gen_text(
+            [header, ""] + ["%s%s%s%s" % (indent, PURPLE, line, RESET) for line in frame],
+            1,
+        )
 
     tagline = "devsecops"
     tagline_col = (terminal.num_cols - len(tagline)) // 2 + 1
-    tagline_row = top_row + len(logo) + 2
+    tagline_row = terminal.num_rows
     for line in gifos.effects.text_scramble_effect_lines(tagline, 3, include_special=False):
         terminal.delete_row(tagline_row)
         terminal.gen_text("%s%s%s" % (DEEP, line, RESET), tagline_row, tagline_col)
