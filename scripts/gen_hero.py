@@ -230,16 +230,91 @@ def build_spinner(model, colour, title):
     return "".join(parts)
 
 
+BAR_THICKNESS = 1.2
+BAR_X = (1.2, 3.6)
+BAR_Y = (3.4, 5.4)
+SEAM_OVERLAP = 0.1
+
+
+def horizontal_bar(x, y, opens_right):
+    if opens_right:
+        return (x, y, CHAR_WIDTH - x, BAR_THICKNESS)
+    return (0.0, y, x + BAR_THICKNESS, BAR_THICKNESS)
+
+
+def vertical_bar(x, y, opens_down):
+    if opens_down:
+        return (x, y, BAR_THICKNESS, LINE_HEIGHT - y)
+    return (x, 0.0, BAR_THICKNESS, y + BAR_THICKNESS)
+
+
+def corner_bars(opens_right, opens_down):
+    outer_x, inner_x = BAR_X if opens_right else BAR_X[::-1]
+    outer_y, inner_y = BAR_Y if opens_down else BAR_Y[::-1]
+    return [
+        horizontal_bar(outer_x, outer_y, opens_right),
+        horizontal_bar(inner_x, inner_y, opens_right),
+        vertical_bar(outer_x, outer_y, opens_down),
+        vertical_bar(inner_x, inner_y, opens_down),
+    ]
+
+
+GLYPH_BARS = {
+    "═": [(0.0, BAR_Y[0], CHAR_WIDTH, BAR_THICKNESS), (0.0, BAR_Y[1], CHAR_WIDTH, BAR_THICKNESS)],
+    "║": [(BAR_X[0], 0.0, BAR_THICKNESS, LINE_HEIGHT), (BAR_X[1], 0.0, BAR_THICKNESS, LINE_HEIGHT)],
+    "╔": corner_bars(True, True),
+    "╗": corner_bars(False, True),
+    "╚": corner_bars(True, False),
+    "╝": corner_bars(False, False),
+}
+
+BLOCK = "█"
+
+
+def block_runs(line):
+    """Merge each horizontal run of full blocks into one span, so abutting
+    rectangles cannot show antialiased hairlines between them."""
+    runs = []
+    start = None
+    for col, char in enumerate(line + " "):
+        if char == BLOCK and start is None:
+            start = col
+        elif char != BLOCK and start is not None:
+            runs.append((start, col - start))
+            start = None
+    return runs
+
+
+def wordmark_rects(lines):
+    rects = []
+    for row, line in enumerate(lines):
+        y = row * LINE_HEIGHT
+        for start, length in block_runs(line):
+            height = LINE_HEIGHT + (SEAM_OVERLAP if row < len(lines) - 1 else 0.0)
+            rects.append((start * CHAR_WIDTH, y, length * CHAR_WIDTH, height))
+        for col, char in enumerate(line):
+            for bar_x, bar_y, bar_w, bar_h in GLYPH_BARS.get(char, ()):
+                rects.append((col * CHAR_WIDTH + bar_x, y + bar_y, bar_w, bar_h))
+    return rects
+
+
 def build_wordmark(lines, colour, title):
+    """Draw the wordmark as rectangles rather than <text>.
+
+    The art is built from U+2550-U+2588 box and block glyphs, which the
+    monospace fonts in FONT_STACK do not contain. Rendered as text inside an
+    <img>, browsers fall back to a proportional font and the art collapses, so
+    the eight glyphs are emitted as vector geometry instead.
+    """
     width = math.ceil(max(len(line) for line in lines) * CHAR_WIDTH)
     height = math.ceil(len(lines) * LINE_HEIGHT)
-    return "".join(
-        [
-            svg_open(width, height, colour),
-            "<title>%s</title>" % escape(title),
-            '<text xml:space="preserve">%s</text>' % text_rows(lines),
-            "</svg>",
-        ]
+    shapes = "".join(
+        '<rect x="%g" y="%g" width="%g" height="%g"/>' % rect for rect in wordmark_rects(lines)
+    )
+    return (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
+        'role="img" fill="%s"><title>%s</title>%s</svg>'
+        % (width, height, width, height, colour, escape(title), shapes)
     )
 
 
