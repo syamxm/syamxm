@@ -38,6 +38,28 @@ SHININESS = 10
 FONT_SIZE = 10.0
 CHAR_WIDTH = 6.0
 LINE_HEIGHT = 10.0
+TICKER_MESSAGES = [
+    "devsecops",
+    "devops intern — 7 sep 2026 to 5 mar 2027",
+    "uitm shah alam · final year computer science (hons)",
+    "self-hosts everything, no open inbound ports",
+    "open to freelance work",
+]
+
+TICKER_WIDTH = 900
+TICKER_HEIGHT = 46
+TICKER_FONT_SIZE = 22.0
+TICKER_ADVANCE = 13.2
+TICKER_SEPARATOR = "  •  "
+TICKER_INK = "#EDE6FF"
+TICKER_GROUND = "#050409"
+TICKER_EDGE = "#2A2440"
+TICKER_MID = "#D6C4FF"
+TICKER_BLOOM = "#7C3AED"
+DOT_PITCH = 3.0
+DOT_RADIUS = 0.8
+FADE_WIDTH = 38
+
 TYPE_SECONDS = 5.0
 TYPE_REVEALED_PERCENT = 70.0
 CURSOR_BLINK_SECONDS = 0.9
@@ -362,6 +384,100 @@ def build_wordmark(lines, colour, title):
     )
 
 
+def build_ticker(messages, title):
+    """An LED dot-matrix strip, ported from the .ticker rules in components.css.
+
+    The site masks the strip with a repeating radial-gradient to punch a dot
+    grid; SVG has no such mask, so a <pattern> of circles does the same job.
+    Every run is locked to an exact width with textLength, because the scroll
+    distance has to be known here rather than depending on the viewer's font.
+    """
+    run = TICKER_SEPARATOR.join(messages) + TICKER_SEPARATOR
+    run_width = len(run) * TICKER_ADVANCE
+    copies = math.ceil(TICKER_WIDTH / run_width) + 1
+    duration = max(20, round(len(run) * 0.34))
+    baseline = TICKER_HEIGHT / 2.0 + TICKER_FONT_SIZE * 0.35
+
+    runs = "".join(
+        '<text x="%g" y="%g" textLength="%g" lengthAdjust="spacingAndGlyphs"'
+        ' xml:space="preserve">%s</text>' % (index * run_width, baseline, run_width, escape(run))
+        for index in range(copies)
+    )
+
+    style = (
+        "<style>"
+        ".t{animation:scroll %(duration)ds linear infinite}"
+        "@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-%(distance)gpx)}}"
+        "@media(prefers-reduced-motion:reduce){.t{animation:none}}"
+        "</style>" % {"duration": duration, "distance": run_width}
+    )
+
+    defs = (
+        "<defs>"
+        '<pattern id="dots" width="%(pitch)g" height="%(pitch)g" patternUnits="userSpaceOnUse">'
+        '<circle cx="%(half)g" cy="%(half)g" r="%(radius)g" fill="#fff"/></pattern>'
+        '<mask id="grid"><rect width="%(width)d" height="%(height)d" fill="url(#dots)"/></mask>'
+        '<filter id="glow" x="-10%%" y="-100%%" width="120%%" height="300%%">'
+        '<feGaussianBlur in="SourceAlpha" stdDeviation="4" result="wide"/>'
+        '<feFlood flood-color="%(bloom)s" flood-opacity="0.55"/>'
+        '<feComposite in2="wide" operator="in" result="halo"/>'
+        '<feGaussianBlur in="SourceAlpha" stdDeviation="1.4" result="near"/>'
+        '<feFlood flood-color="%(mid)s" flood-opacity="0.85"/>'
+        '<feComposite in2="near" operator="in" result="ring"/>'
+        '<feMerge><feMergeNode in="halo"/><feMergeNode in="ring"/>'
+        '<feMergeNode in="SourceGraphic"/></feMerge></filter>'
+        '<linearGradient id="fade"><stop offset="0" stop-color="%(ground)s"/>'
+        '<stop offset="1" stop-color="%(ground)s" stop-opacity="0"/></linearGradient>'
+        "</defs>"
+        % {
+            "pitch": DOT_PITCH,
+            "half": DOT_PITCH / 2.0,
+            "radius": DOT_RADIUS,
+            "width": TICKER_WIDTH,
+            "height": TICKER_HEIGHT,
+            "ground": TICKER_GROUND,
+            "bloom": TICKER_BLOOM,
+            "mid": TICKER_MID,
+        }
+    )
+
+    return (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %(width)d %(height)d" '
+        'width="%(width)d" height="%(height)d" role="img" font-family="%(font)s" '
+        'font-size="%(size)g" letter-spacing="0.045em">'
+        "<title>%(title)s</title>%(style)s%(defs)s"
+        '<rect width="%(width)d" height="%(height)d" fill="%(ground)s"/>'
+        '<g mask="url(#grid)">'
+        '<rect width="%(width)d" height="%(height)d" fill="%(ink)s" opacity="0.075"/>'
+        '<g class="t" filter="url(#glow)" fill="%(ink)s">%(runs)s</g>'
+        "</g>"
+        '<rect width="%(fade)d" height="%(height)d" fill="url(#fade)"/>'
+        '<rect x="%(fade_x)d" width="%(fade)d" height="%(height)d" fill="url(#fade)" '
+        'transform="rotate(180 %(mirror_x)g %(mirror_y)g)"/>'
+        '<rect width="%(width)d" height="1" fill="%(edge)s"/>'
+        '<rect y="%(bottom)d" width="%(width)d" height="1" fill="%(edge)s"/>'
+        "</svg>"
+        % {
+            "width": TICKER_WIDTH,
+            "height": TICKER_HEIGHT,
+            "font": escape(FONT_STACK, {'"': "&quot;"}),
+            "size": TICKER_FONT_SIZE,
+            "title": escape(title),
+            "style": style,
+            "defs": defs,
+            "ground": TICKER_GROUND,
+            "ink": TICKER_INK,
+            "edge": TICKER_EDGE,
+            "runs": runs,
+            "fade": FADE_WIDTH,
+            "fade_x": TICKER_WIDTH - FADE_WIDTH,
+            "mirror_x": TICKER_WIDTH - FADE_WIDTH / 2.0,
+            "mirror_y": TICKER_HEIGHT / 2.0,
+            "bottom": TICKER_HEIGHT - 1,
+        }
+    )
+
+
 def write(name, content):
     path = os.path.join(ASSETS, name)
     with open(path, "w", encoding="utf-8") as handle:
@@ -377,6 +493,7 @@ def main():
     write("hero-light.svg", build_spinner(model, LIGHT_PURPLE, "syamxm logo, rotating"))
     write("wordmark-dark.svg", build_wordmark(wordmark, DARK_PURPLE, "SYAMXM"))
     write("wordmark-light.svg", build_wordmark(wordmark, LIGHT_PURPLE, "SYAMXM"))
+    write("ticker.svg", build_ticker(TICKER_MESSAGES, "status ticker"))
 
 
 if __name__ == "__main__":

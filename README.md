@@ -14,6 +14,8 @@
 
 </div>
 
+<img alt="devsecops · devops intern from 7 sep 2026 · uitm shah alam final year computer science (hons) · self-hosts everything · open to freelance work" src="assets/ticker.svg" width="100%">
+
 ```console
 syamxm@cachyos ~> cat about.txt
 
