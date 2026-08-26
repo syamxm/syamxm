@@ -1,0 +1,24 @@
+[syamxm]
+        [syamxm.default_colors]
+        fg = "#E4E1EE"
+        bg = "#050409"
+
+        [syamxm.normal_colors]
+        black = "#1E1E2E"
+        red = "#df5b61"
+        green = "#78b892"
+        yellow = "#de8f78"
+        blue = "#7C3AED"
+        magenta = "#A78BFA"
+        cyan = "#67afc1"
+        white = "#E4E1EE"
+
+        [syamxm.bright_colors]
+        black = "#3B2A5E"
+        red = "#e8646a"
+        green = "#81c19b"
+        yellow = "#e79881"
+        blue = "#8B5FD9"
+        magenta = "#BD93F9"
+        cyan = "#70b8ca"
+        white = "#EDE6FF"
