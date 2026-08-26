@@ -53,18 +53,32 @@ syamxm@cachyos ~> cat learning.txt
 syamxm@cachyos ~> cat contact.txt
 ```
 
-[Portfolio](https://syamxm.com) · [CV](https://cv.syamxm.com) · [LinkedIn](https://www.linkedin.com/in/syamxm) · [Email](mailto:ahmadsyamim200@gmail.com) · [Repositories](https://github.com/syamxm?tab=repositories)
+<div align="center">
+
+<a href="mailto:ahmadsyamim200@gmail.com"><img src="https://img.shields.io/badge/Email-1E1E2E?style=for-the-badge&logo=gmail&logoColor=BD93F9" /></a>
+<a href="https://syamxm.com"><img src="https://img.shields.io/badge/Portfolio-1E1E2E?style=for-the-badge&logo=firefox&logoColor=BD93F9" /></a>
+<a href="https://cv.syamxm.com"><img src="https://img.shields.io/badge/CV-1E1E2E?style=for-the-badge&logo=readdotcv&logoColor=BD93F9" /></a>
+<a href="https://www.linkedin.com/in/syamxm"><img src="https://img.shields.io/badge/LinkedIn-1E1E2E?style=for-the-badge&logo=linkedin&logoColor=BD93F9" /></a>
+<a href="https://github.com/syamxm?tab=repositories"><img src="https://img.shields.io/badge/Repositories-1E1E2E?style=for-the-badge&logo=github&logoColor=BD93F9" /></a>
+
+</div>
 
 ```console
 syamxm@cachyos ~> git log --stat
 ```
+
+<div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/syamxm/syamxm/output/streak.svg">
   <img alt="GitHub streak stats" src="https://raw.githubusercontent.com/syamxm/syamxm/output/streak-light.svg">
 </picture>
 
+<br><br>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/syamxm/syamxm/output/github-contribution-grid-snake-dark.svg">
   <img alt="contribution snake" src="https://raw.githubusercontent.com/syamxm/syamxm/output/github-contribution-grid-snake.svg">
 </picture>
+
+</div>
