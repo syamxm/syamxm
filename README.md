@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CachyOS-1E1E2E?style=flat-square&logo=archlinux&logoColor=BD93F9" />
-  <img src="https://img.shields.io/badge/Fish-1E1E2E?style=flat-square&logoColor=BD93F9" />
+  <img src="https://img.shields.io/badge/Fish-1E1E2E?style=flat-square&logo=fishshell&logoColor=BD93F9" />
   <img src="https://img.shields.io/badge/Neovim-1E1E2E?style=flat-square&logo=neovim&logoColor=BD93F9" />
   <img src="https://img.shields.io/badge/Debian_homeserver-1E1E2E?style=flat-square&logo=debian&logoColor=BD93F9" />
 </p>
