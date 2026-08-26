@@ -38,6 +38,10 @@ SHININESS = 10
 FONT_SIZE = 10.0
 CHAR_WIDTH = 6.0
 LINE_HEIGHT = 10.0
+TYPE_SECONDS = 5.0
+TYPE_REVEALED_PERCENT = 70.0
+CURSOR_BLINK_SECONDS = 0.9
+
 FONT_STACK = "ui-monospace,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace"
 
 
@@ -298,6 +302,33 @@ def wordmark_rects(lines):
     return rects
 
 
+def wordmark_style(columns, width):
+    """Type the wordmark out one character cell at a time.
+
+    Both animations start from their resting state in @keyframes rather than in
+    the rule, so a renderer that ignores CSS animation still shows the finished
+    wordmark with no cursor instead of an empty box.
+    """
+    return (
+        "<style>"
+        ".w{animation:type %(seconds)gs steps(%(columns)d) infinite}"
+        "@keyframes type{0%%{clip-path:inset(0 100%% 0 0)}%(revealed)g%%,100%%{clip-path:inset(0)}}"
+        ".c{opacity:0;animation:move %(seconds)gs steps(%(columns)d) infinite,"
+        "blink %(blink)gs step-end infinite}"
+        "@keyframes move{0%%{transform:translateX(0)}%(revealed)g%%,100%%{transform:translateX(%(width)dpx)}}"
+        "@keyframes blink{0%%,50%%{opacity:0.8}50.01%%,100%%{opacity:0}}"
+        "@media(prefers-reduced-motion:reduce){.w{animation:none}.c{display:none}}"
+        "</style>"
+        % {
+            "seconds": TYPE_SECONDS,
+            "columns": columns,
+            "revealed": TYPE_REVEALED_PERCENT,
+            "blink": CURSOR_BLINK_SECONDS,
+            "width": width,
+        }
+    )
+
+
 def build_wordmark(lines, colour, title):
     """Draw the wordmark as rectangles rather than <text>.
 
@@ -306,15 +337,28 @@ def build_wordmark(lines, colour, title):
     <img>, browsers fall back to a proportional font and the art collapses, so
     the eight glyphs are emitted as vector geometry instead.
     """
-    width = math.ceil(max(len(line) for line in lines) * CHAR_WIDTH)
+    columns = max(len(line) for line in lines)
+    width = math.ceil(columns * CHAR_WIDTH)
     height = math.ceil(len(lines) * LINE_HEIGHT)
     shapes = "".join(
         '<rect x="%g" y="%g" width="%g" height="%g"/>' % rect for rect in wordmark_rects(lines)
     )
     return (
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
-        'role="img" fill="%s"><title>%s</title>%s</svg>'
-        % (width, height, width, height, colour, escape(title), shapes)
+        'role="img" fill="%s"><title>%s</title>%s<g class="w">%s</g>'
+        '<rect class="c" x="0" y="0" width="%g" height="%d"/></svg>'
+        % (
+            width,
+            height,
+            width,
+            height,
+            colour,
+            escape(title),
+            wordmark_style(columns, width),
+            shapes,
+            CHAR_WIDTH,
+            height,
+        )
     )
 
 

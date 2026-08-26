@@ -1,13 +1,20 @@
+<div align="center">
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg">
   <img alt="SYAMXM" src="assets/wordmark-light.svg" width="420">
 </picture>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/CachyOS-1E1E2E?style=flat-square&logo=archlinux&logoColor=BD93F9" />
+  <img src="https://img.shields.io/badge/Fish-1E1E2E?style=flat-square&logoColor=BD93F9" />
+  <img src="https://img.shields.io/badge/Neovim-1E1E2E?style=flat-square&logo=neovim&logoColor=BD93F9" />
+  <img src="https://img.shields.io/badge/Debian_homeserver-1E1E2E?style=flat-square&logo=debian&logoColor=BD93F9" />
+</p>
+
+</div>
+
 ```console
-syamxm@cachyos ~> whoami
-
-  Ahmad Syamim — syamxm
-
 syamxm@cachyos ~> cat about.txt
 
   Final-year Computer Science (Hons) student at UiTM Shah Alam, DevSecOps
@@ -18,12 +25,6 @@ syamxm@cachyos ~> cat about.txt
   ports — everything goes through Cloudflare Tunnel or Tailscale.
 
   Infrastructure that is defensible, not decorative.
-
-syamxm@cachyos ~> env | grep -E 'ROLE|HOST|SHELL'
-
-  ROLE    student · devops intern
-  HOST    debian homeserver
-  SHELL   fish
 
 syamxm@cachyos ~> ls ~/projects
 
@@ -50,6 +51,31 @@ syamxm@cachyos ~> cat learning.txt
   Currently studying Kubernetes and GitLab CI.
   Neither is in shipped work yet.
 
+syamxm@cachyos ~> echo $STACK
+```
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Docker-1E1E2E?style=for-the-badge&logo=docker&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/GitHub_Actions-1E1E2E?style=for-the-badge&logo=githubactions&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Cloudflare-1E1E2E?style=for-the-badge&logo=cloudflare&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Grafana-1E1E2E?style=for-the-badge&logo=grafana&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Prometheus-1E1E2E?style=for-the-badge&logo=prometheus&logoColor=BD93F9" />
+<br>
+<img src="https://img.shields.io/badge/PHP-1E1E2E?style=for-the-badge&logo=php&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/MariaDB-1E1E2E?style=for-the-badge&logo=mariadb&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Ollama-1E1E2E?style=for-the-badge&logo=ollama&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Python-1E1E2E?style=for-the-badge&logo=python&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/FastAPI-1E1E2E?style=for-the-badge&logo=fastapi&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/React-1E1E2E?style=for-the-badge&logo=react&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Flutter-1E1E2E?style=for-the-badge&logo=flutter&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Firebase-1E1E2E?style=for-the-badge&logo=firebase&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/PostgreSQL-1E1E2E?style=for-the-badge&logo=postgresql&logoColor=BD93F9" />
+<img src="https://img.shields.io/badge/Redis-1E1E2E?style=for-the-badge&logo=redis&logoColor=BD93F9" />
+
+</div>
+
+```console
 syamxm@cachyos ~> cat contact.txt
 ```
 
