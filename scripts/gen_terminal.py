@@ -11,6 +11,7 @@ Writes terminal.gif to the working directory.
 """
 
 import os
+import re
 import sys
 from datetime import datetime, timezone, timedelta
 
@@ -21,11 +22,14 @@ IGNORE_REPOS = ["syamxm"]
 TIMEZONE = timezone(timedelta(hours=8))
 
 WIDTH = 1000
-HEIGHT = 500
+HEIGHT = 580
 PADDING = 15
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WORDMARK_SOURCE = os.path.join(REPO_ROOT, "assets", "syamxm.txt")
+CACHYOS_LOGO_SOURCE = os.path.join(REPO_ROOT, "assets", "cachyos.txt")
+
+ANSI_PATTERN = re.compile(r"\x1b\[[0-9;]*m")
 
 PURPLE = "\x1b[95m"
 DEEP = "\x1b[94m"
@@ -34,9 +38,11 @@ DIM = "\x1b[34m"
 BANNER = "\x1b[30;105m"
 RESET = "\x1b[0m"
 
-DETAILS_COLUMN = 58
+DETAILS_COLUMN = 57
 
 PROMPT = "%ssyamxm@cachyos%s ~> " % (PURPLE, RESET)
+
+STACK = "Go, Python, Java, PHP, JavaScript"
 
 MEMORY_TOTAL = 65536
 MEMORY_STEP = 7168
@@ -60,6 +66,29 @@ def ascii_wordmark(scale=1):
         row = "".join(("#" if char == "\u2588" else " ") * scale for char in line)
         scaled.extend([row] * scale)
     return scaled
+
+
+def cachyos_logo():
+    """The CachyOS logo, recoloured to this profile's palette.
+
+    Vendored from fastfetch (MIT) at src/logo/ascii/c/cachyos.txt. Its $1/$2/$3
+    markers are palette slots, green and cyan upstream; they are remapped here
+    so the logo does not fight the purple everything else uses.
+    """
+    slots = {"$1": PURPLE, "$2": DEEP, "$3": DIM}
+    with open(CACHYOS_LOGO_SOURCE, encoding="utf-8") as handle:
+        lines = handle.read().rstrip("\n").split("\n")
+
+    coloured = []
+    for line in lines:
+        for marker, colour in slots.items():
+            line = line.replace(marker, colour)
+        coloured.append(line + RESET)
+    return coloured
+
+
+def visible_width(line):
+    return len(ANSI_PATTERN.sub("", line))
 
 
 def post_screen(terminal, year):
@@ -125,8 +154,7 @@ def login_screen(terminal, stamp):
 
 
 def fetch_panel(terminal, stats, year):
-    logo = ascii_wordmark()
-    top_languages = ", ".join(name for name, _ in stats.languages_sorted[:5])
+    logo = cachyos_logo()
 
     def field(label, value):
         return "%s%s%s%s%s" % (DEEP, label.ljust(17), INK, value, RESET)
@@ -150,7 +178,7 @@ def fetch_panel(terminal, stats, year):
         field("Pull Requests:", "%s merged of %s"
               % (stats.total_pull_requests_merged, stats.total_pull_requests_made)),
         field("Contributions:", stats.total_repo_contributions),
-        field("Top Languages:", top_languages),
+        field("Stack:", STACK),
     ]
 
     terminal.clear_frame()
@@ -168,9 +196,8 @@ def fetch_panel(terminal, stats, year):
     for offset in range(max(len(logo), len(details))):
         art = logo[offset] if offset < len(logo) else ""
         info = details[offset] if offset < len(details) else ""
-        terminal.gen_text(
-            "%s%s%s%s" % (PURPLE, art.ljust(DETAILS_COLUMN - 1), RESET, info), 3 + offset
-        )
+        gap = " " * max(1, DETAILS_COLUMN - 1 - visible_width(art))
+        terminal.gen_text("%s%s%s" % (art, gap, info), 3 + offset)
 
     terminal.gen_text("", 3 + max(len(logo), len(details)), count=HOLD_SHORT)
 
