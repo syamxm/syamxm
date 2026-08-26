@@ -1,12 +1,12 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg">
+  <img alt="SYAMXM" src="assets/wordmark-light.svg" width="420">
+</picture>
+
 ```console
 syamxm@cachyos ~> whoami
 
-███████╗██╗   ██╗ █████╗ ███╗   ███╗██╗  ██╗███╗   ███╗
-██╔════╝╚██╗ ██╔╝██╔══██╗████╗ ████║╚██╗██╔╝████╗ ████║
-███████╗ ╚████╔╝ ███████║██╔████╔██║ ╚███╔╝ ██╔████╔██║
-╚════██║  ╚██╔╝  ██╔══██║██║╚██╔╝██║ ██╔██╗ ██║╚██╔╝██║
-███████║   ██║   ██║  ██║██║ ╚═╝ ██║██╔╝ ██╗██║ ╚═╝ ██║
-╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
+  Ahmad Syamim — syamxm
 
 syamxm@cachyos ~> cat about.txt
 

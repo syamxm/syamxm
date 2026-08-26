@@ -252,7 +252,7 @@ def write(name, content):
 
 def main():
     model = build_model(read_art("ascii-art.txt"))
-    wordmark = read_art("wordmark.txt")
+    wordmark = read_art("syamxm.txt")
 
     write("hero-dark.svg", build_spinner(model, DARK_PURPLE, "syamxm logo, rotating"))
     write("hero-light.svg", build_spinner(model, LIGHT_PURPLE, "syamxm logo, rotating"))
