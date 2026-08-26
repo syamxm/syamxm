@@ -16,7 +16,7 @@
 
 <img alt="devsecops · devops intern from 7 sep 2026 · uitm shah alam final year computer science (hons) · self-hosts everything · open to freelance work" src="assets/ticker.svg" width="100%">
 
-<img alt="terminal: neofetch output for syamxm — debian homeserver, fish, neovim, and live github stats" src="https://raw.githubusercontent.com/syamxm/syamxm/output/terminal.gif" width="100%">
+<img alt="terminal boot sequence: BIOS memory test, CachyOS tty login as syamxm, then a fastfetch panel with host details and live GitHub stats" src="https://raw.githubusercontent.com/syamxm/syamxm/output/terminal.gif" width="100%">
 
 ```console
 syamxm@cachyos ~> git log --stat
